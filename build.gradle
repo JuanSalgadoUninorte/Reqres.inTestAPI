@@ -1,0 +1,32 @@
+version = '1.0'
+description = 'Automatización Choucair Academy'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.3.4")
+    }
+}
+
+dependencies {
+    testImplementation('junit:junit:4.13.2')
+    testImplementation('org.assertj:assertj-core:3.23.1')
+    testImplementation('org.slf4j:slf4j-simple:2.0.5')
+    implementation 'net.serenity-bdd:serenity-core:3.4.3'
+    implementation 'net.serenity-bdd:serenity-junit:3.4.3'
+    implementation 'net.serenity-bdd:serenity-cucumber:3.4.3'
+    implementation 'net.serenity-bdd:serenity-screenplay:3.4.3'
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:3.4.3'
+    implementation 'net.serenity-bdd:serenity-screenplay-rest:3.4.3'
+}
+
+gradle.startParameter.continueOnFailure = true
